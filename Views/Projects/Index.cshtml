@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HariharanBlog.Models.Project>
+
+<h2>My Projects</h2>
+<div class="row">
+    @foreach (var project in Model)
+    {
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">@project.Name</div>
+                <div class="panel-body">
+                    <p>@project.Description</p>
+                    <p><strong>Tools:</strong> @project.Tools</p>
+                    @if (!string.IsNullOrEmpty(project.Link))
+                    {
+                        <a href="@project.Link" target="_blank" class="btn btn-info">View Project</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>
+
